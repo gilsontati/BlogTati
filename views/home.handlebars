@@ -1,0 +1,27 @@
+{{#if user}}
+{{else}}
+<div class="jumbotron">
+  <h1 class="display-4">Bem-vindo ao Blog Tati</h1>
+  <p class="lead">Este pequeno Blog é parte dos meus desenvolvimentos do dia a dia. Sinta-se a vontade de participar!</p>
+  <hr class="my-4">
+  <p>Criado por Gilson Tati. Estudante da IMETRO HAHAHAHAHAH!</p>
+  <a class="btn btn-primary btn-lg" href="/usuario/registro" role="button">Crie uma conta</a>
+  <a class="btn btn-primary btn-lg" href="/usuario/login" role="button">Iniciar sessão</a>
+</div>
+{{/if}}
+<hr>
+<h4>Postagens recentes:</h4>
+
+{{#each postagem}}
+<div class="card">
+<div class="card-body">
+<h5>{{titulo}}</h5>
+<p>{{descricao}}</p>
+<a href="/postagens/{{slug}}"><button class="btn btn-success">Leia Mais</button></a>
+<hr>
+<small><strong>Categoria:</strong> {{categoria.nome}}</small><br>
+<small><strong>Data de publicacao:</strong> {{data}}</small>
+</div>
+</div>
+{{else}}
+{{/each}}
